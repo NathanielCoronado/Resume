@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nathaniel S. Coronado | Resume</title>
+<meta name="description" content="Resume of Nathaniel S. Coronado, BS Information Technology student and Customer Service Representative.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #14152b;
+    --muted: #5b5e76;
+    --line: #e3e4ee;
+    --accent: #2f33a8;
+    --accent-soft: #eef0fc;
+    --bg: #f5f6fa;
+    --paper: #ffffff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .page {
+    max-width: 880px;
+    margin: 40px auto;
+    background: var(--paper);
+    border-radius: 14px;
+    box-shadow: 0 10px 40px rgba(20, 21, 43, 0.08);
+    overflow: hidden;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    padding: 44px 48px 36px;
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(135deg, #ffffff 0%, var(--accent-soft) 100%);
+  }
+  .photo {
+    width: 132px; height: 132px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    box-shadow: 0 6px 18px rgba(47, 51, 168, 0.18);
+    flex-shrink: 0;
+  }
+  h1 {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  h1 span { color: var(--accent); }
+  .title {
+    margin-top: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin-top: 14px;
+    font-size: 14px;
+  }
+  .contact span, .contact a {
+    display: inline-flex; align-items: center; gap: 6px;
+    color: var(--ink);
+  }
+  .contact svg { width: 15px; height: 15px; fill: var(--accent); flex-shrink: 0; }
+
+  /* ---------- Layout ---------- */
+  .body {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+  }
+  main { padding: 36px 40px 40px 48px; }
+  aside {
+    padding: 36px 32px 40px;
+    background: #fafbfe;
+    border-left: 1px solid var(--line);
+  }
+
+  section + section { margin-top: 32px; }
+  h2 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--accent-soft);
+  }
+
+  .summary { color: #2b2d45; }
+
+  /* ---------- Timeline items ---------- */
+  .item + .item { margin-top: 22px; }
+  .item-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .role { font-weight: 700; font-size: 15.5px; }
+  .date {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .org { font-size: 14px; color: var(--accent); font-weight: 600; margin-top: 1px; }
+  .item ul { margin: 8px 0 0 18px; }
+  .item li { margin-top: 4px; color: #2b2d45; }
+  .item li::marker { color: var(--accent); }
+  .badge {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 2px 9px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  /* ---------- Sidebar ---------- */
+  .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+  .chip {
+    font-size: 12.5px;
+    font-weight: 500;
+    padding: 5px 11px;
+    border-radius: 6px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+  }
+  .list { list-style: none; }
+  .list li { font-size: 13.5px; padding: 5px 0; color: #2b2d45; }
+  .list li + li { border-top: 1px dashed var(--line); }
+  .cert { font-size: 13.5px; }
+  .cert + .cert { margin-top: 12px; }
+  .cert strong { display: block; font-weight: 600; line-height: 1.35; }
+  .cert small { color: var(--muted); font-size: 12.5px; }
+
+  /* ---------- Footer ---------- */
+  .actions {
+    display: flex; gap: 10px; justify-content: center;
+    padding: 0 0 40px;
+  }
+  .btn {
+    font: inherit; font-size: 14px; font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+  }
+  .btn.ghost { background: transparent; color: var(--accent); }
+  .btn:hover { opacity: 0.9; text-decoration: none; }
+  footer {
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--muted);
+    padding: 0 20px 40px;
+  }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 760px) {
+    .page { margin: 0; border-radius: 0; }
+    header { flex-direction: column; text-align: center; padding: 36px 24px 28px; }
+    .contact { justify-content: center; }
+    h1 { font-size: 28px; }
+    .body { grid-template-columns: 1fr; }
+    main { padding: 28px 24px; }
+    aside { border-left: none; border-top: 1px solid var(--line); padding: 28px 24px; }
+  }
+
+  /* ---------- Print / Save as PDF ---------- */
+  @media print {
+    @page { size: A4; margin: 12mm; }
+    body { background: #fff; font-size: 11pt; }
+    .page { margin: 0; box-shadow: none; border-radius: 0; max-width: none; }
+    header { background: none; padding: 0 0 18px; }
+    main { padding: 20px 20px 0 0; }
+    aside { padding: 20px 0 0 18px; background: none; }
+    .actions, footer { display: none; }
+    a { color: var(--ink); }
+    section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ================= HEADER ================= -->
+  <header>
+    <img class="photo" src="photo.jpg" alt="Photo of Nathaniel S. Coronado">
+    <div>
+      <h1>Nathaniel S. <span>Coronado</span></h1>
+      <p class="title">BS Information Technology Student · Customer Service Representative</p>
+      <div class="contact">
+        <span>
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+          Quezon City, Philippines
+        </span>
+        <a href="mailto:neilphone18@gmail.com">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          neilphone18@gmail.com
+        </a>
+        <a href="https://github.com/NathanielCoronado" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></svg>
+          github.com/NathanielCoronado
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="body">
+
+    <!-- ================= MAIN ================= -->
+    <main>
+
+      <section>
+        <h2>Summary</h2>
+        <p class="summary">
+          Third-year BS Information Technology student and Dean's Lister at New Era University, currently working full-time
+          as a Customer Service Representative for a local credit card account. Oracle- and IBM-certified in cloud and
+          database fundamentals, with hands-on experience in Java, PHP, SQL, and web development. Known for staying
+          calm under pressure, learning fast, and balancing academics with full-time work. Looking to grow in IT and
+          tech-enabled customer support.
+        </p>
+      </section>
+
+      <section>
+        <h2>Work Experience</h2>
+
+        <div class="item">
+          <div class="item-head">
+            <div class="role">Customer Service Representative <span class="badge">Current</span></div>
+            <div class="date">Apr 2026 – Present</div>
+          </div>
+          <div class="org">Inspiro · Bankard Account (Inbound) · Pasig City</div>
+          <ul>
+            <li>Handle inbound calls from local cardholders on balance and billing inquiries, payments, card activation, credit limits, and lost or stolen card reports.</li>
+            <li>Verify caller identity and follow strict data privacy and banking compliance standards on every interaction.</li>
+            <li>De-escalate irate customers and resolve concerns on first contact whenever possible.</li>
+            <li>Document accounts and case notes accurately while consistently meeting AHT, CSAT, and QA targets.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-head">
+            <div class="role">Service Crew (Bussing &amp; DJ)</div>
+            <div class="date">Feb 2025 – May 2025 · Feb 2026 – Apr 2026</div>
+          </div>
+          <div class="org">Chowking Congressional · Quezon City</div>
+          <ul>
+            <li>Managed floor operations and guest experience, keeping tables turned over quickly during peak lunch and dinner hours.</li>
+            <li>Followed food safety, sanitation, and cleanliness standards, helping keep the store audit-ready.</li>
+            <li>Handled customer concerns calmly and politely, and supported teammates across stations when needed.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+
+        <div class="item">
+          <div class="item-head">
+            <div class="role">BS Information Technology</div>
+            <div class="date">2024 – Present</div>
+          </div>
+          <div class="org">New Era University · Quezon City</div>
+          <ul>
+            <li>3rd Year; Dean's Lister with academic scholarship.</li>
+          </ul>
+        </div>
+
+        <div class="item">
+          <div class="item-head">
+            <div class="role">Senior High School, STEM Strand</div>
+          </div>
+          <div class="org">Gardner College Diliman · Quezon City</div>
+          <ul>
+            <li>Graduated With Honors.</li>
+            <li>International Service Director, Rotaract Club.</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ================= SIDEBAR ================= -->
+    <aside>
+
+      <section>
+        <h2>Technical Skills</h2>
+        <div class="chips">
+          <span class="chip">Java</span>
+          <span class="chip">HTML</span>
+          <span class="chip">CSS</span>
+          <span class="chip">PHP</span>
+          <span class="chip">SQL</span>
+          <span class="chip">NoSQL</span>
+          <span class="chip">Oracle Cloud</span>
+          <span class="chip">Git &amp; GitHub</span>
+          <span class="chip">Canva (UI Mockups)</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Core Strengths</h2>
+        <ul class="list">
+          <li>Customer Service</li>
+          <li>Problem Solving</li>
+          <li>Communication (English &amp; Filipino)</li>
+          <li>De-escalation</li>
+          <li>Time Management</li>
+          <li>Attention to Detail</li>
+          <li>Teamwork</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Certifications</h2>
+        <div class="cert">
+          <strong><a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=473FA48DF2F8837AB803A413E03B54DA39AC47735994C987995C0F81827FCCE7" target="_blank" rel="noopener">Oracle Cloud Data Management Foundations Associate</a></strong>
+          <small>Oracle</small>
+        </div>
+        <div class="cert">
+          <strong><a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=333721A84895FF2752E9FB236FCBC0BCE784ADE1AB871538E3828E36287BB8F3" target="_blank" rel="noopener">OCI Foundations Associate</a></strong>
+          <small>Oracle</small>
+        </div>
+        <div class="cert">
+          <strong><a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=AE180958460A8FC782381D0387DAC4A8F774CFE5269B1BD8EFADBB685C7B879E" target="_blank" rel="noopener">OCI AI Foundations Associate</a></strong>
+          <small>Oracle · 2025</small>
+        </div>
+        <div class="cert">
+          <strong><a href="https://courses.cognitiveclass.ai/certificates/84ef360a6b104302b71d523b2e1720ae" target="_blank" rel="noopener">SQL and Relational Databases 101</a></strong>
+          <small>IBM via Cognitive Class</small>
+        </div>
+        <div class="cert">
+          <strong><a href="https://courses.cognitiveclass.ai/certificates/a0eca1f334f5459db963a440c97055c7" target="_blank" rel="noopener">NoSQL and DBaaS 101</a></strong>
+          <small>IBM via Cognitive Class</small>
+        </div>
+      </section>
+
+      <section>
+        <h2>References</h2>
+        <p style="font-size:13.5px;color:#2b2d45;">Available upon request.</p>
+      </section>
+
+    </aside>
+  </div>
+
+  <div class="actions">
+    <button class="btn" onclick="window.print()">Download as PDF</button>
+    <a class="btn ghost" href="mailto:neilphone18@gmail.com">Contact Me</a>
+  </div>
+
+  <footer>© 2026 Nathaniel S. Coronado</footer>
+</div>
+
+</body>
+</html>
